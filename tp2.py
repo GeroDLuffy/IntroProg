@@ -190,13 +190,15 @@
 cntd1 = int(input('Cantidad de caracteres en lista 1: '))
 cntd2 = int(input('Cantidad de caracteres en lista 2: '))
 m, n = [], []
-
+contadorCarRepetidas = 0
 for i in range(cntd1):
     car = input(f'Ingrese caracter {i + 1} lista 1: ')
     while len(car) != 1:
         print('Se pidio caracter.')
         car = input(f'Ingrese caracter {i + 1}: ')
     m += [car]
+
+print()
 
 for j in range(cntd2):
     car2 = input(f'Ingrese caracter {j + 1} lista 2: ')
@@ -207,4 +209,9 @@ for j in range(cntd2):
 
 for caracter in n:
     if caracter in m:
-        print(f'\nCaracter {caracter} se encuentra en la lista 2.')
+        print(f'\nCaracter "{caracter}" de la lista 1 se encuentra en la lista 2.')
+        contadorCarRepetidas += 1
+
+print(f'Cantidad de caracteres repetidos: {contadorCarRepetidas}')
+print(f'\nM = {m}')
+print(f'N = {n}')
